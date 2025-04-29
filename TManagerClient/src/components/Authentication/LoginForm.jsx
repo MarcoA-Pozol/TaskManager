@@ -32,6 +32,15 @@ const LoginForm = () => {
         }
     };
 
+    const handleMissedPassword = () => {
+        /*
+        Send a password recovery email to user's provided email to recover their password
+        (For now, show an alert with a message).
+        Must ask user to enter its email adress first before sendind instructions via email for password recovery.
+        */
+        alert('We sent instructions to your email for password recovery!')
+    }
+
     return( 
         <>
             <div style={{backgroundColor:'rgb(195, 205, 205)', padding:'1rem'}}>
@@ -40,6 +49,7 @@ const LoginForm = () => {
                     <label>Password<input type='password' value={password} onChange={(e) => setPassword(e.target.value)}></input></label>
                     <button type='submit'>Submit</button>
                 </form>
+                <span onClick={handleMissedPassword}>I forgot my password :c</span>
             </div>
         </>
     );
