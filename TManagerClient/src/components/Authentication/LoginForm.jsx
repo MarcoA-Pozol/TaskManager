@@ -18,6 +18,7 @@ const LoginForm = () => {
         */
         event.preventDefault();
 
+        // Must fetch data from server [GET]
         const userFound = mockUsers.find(
             (user) => user.username === username && user.password === password
         );
