@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const AppView = () => {
     const currentAuthUsername = localStorage.getItem('currentAuthUsername') || 'anonym';
@@ -12,6 +13,11 @@ const AppView = () => {
         */
         localStorage.removeItem('currentAuthUsername');
         navigate('/authentication');
+    }
+
+    // Redirect if the user is not authenticated
+    if (currentAuthUsername === 'anonym') {
+        return <Navigate to='/authentication'/>;
     }
 
     return (
